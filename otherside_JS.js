@@ -10,7 +10,7 @@ function disableScroll() { //disables scroll while animations are rendering, now
 function enableScroll() {
     document.body.classList.remove("stop-scrolling");
 }
-console.log('Created by Avi Upadhyayula.');
+console.log('Created by Avi Upadhyayula. Visit my portfolio at https://aupadhy.me');
 document.addEventListener("DOMContentLoaded", function() { //enables scroll when JS elements are fully rendered
     disableScroll('html');
     setTimeout(function() {
@@ -146,11 +146,8 @@ $(document).ready(function() {
                 scrollTop = $(window).scrollTop();
                 elementOffset = $('#slide8_title').offset().top;
                 distance = (elementOffset - scrollTop);
-                if (distance < .5 * window.innerHeight || distance + $('#slide8').height() > 0) {
-                    disableScroll('html');
-                    setTimeout(function() {
-                        enableScroll('html');
-                    }, 1001);
+                if (distance < .5 * window.innerHeight || distance + $('#slide8').height() > 500) {
+                    console.log('');
                     $('html').addClass('slide8_parallax');
                     $('#slide6_content_2.appear').css('color', 'white');
                     $('#slide7').css('color', 'white');
@@ -171,11 +168,8 @@ $(document).ready(function() {
                         backgroundChange = 2;
                         var y = $(window).scrollTop();
                         $(window).scrollTop(y + window.innerHeight / 10 * 4);
-                    } else if (distance > .9 * window.innerHeight) {
-                        disableScroll('html');
-                        setTimeout(function() {
-                            enableScroll('html');
-                        }, 1001);
+                    } else if (distance > 0.9 * window.innerHeight) {
+                        console.log('');
                         $('html').removeClass('slide8_parallax');
                         $('html').css('background-image', 'none');
                         $('#slide6').css('color', 'black');
@@ -195,7 +189,7 @@ $(document).ready(function() {
                         $('#slide6').removeClass('slide8_parallax_background');
                         $('#slide9').removeClass('slide8_parallax_background');
                         $('#slide5').css('margin-top', '10vh');
-                        if (backgroundChange == 2) {
+                        if (backgroundChange == 2 || backgroundChange == 1) {
                             var y2 = $(window).scrollTop();
                             $(window).scrollTop(y2 - window.innerHeight / 10 * 4);
                             backgroundChange = 1;
@@ -251,10 +245,10 @@ $(document).ready(function() {
                             if (distanceFromTop >= 1.09 * targetHeight) {
                                 $('#slide11_content_2').addClass('slideUp');
                                 targetHeight += $('#slide11').height();
-                                if (distanceFromTop >= 1 * targetHeight) {
+                                if (distanceFromTop >= 1.05 * targetHeight) {
                                     $('#slide12_title').addClass('appear');
                                 }
-                                if (distanceFromTop >= 1.04 * targetHeight) {
+                                if (distanceFromTop >= 1.05 * targetHeight) {
                                     $('#slide12_content').addClass('appear');
                                 }
                                 if (distanceFromTop >= 1.07 * targetHeight) {
