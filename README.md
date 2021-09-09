@@ -1,4 +1,5 @@
-# https://theotherside.me
+The Other Side
+================
 
 Host respository for The Other Side, a front-end-heavy research project meant to explore the legislative development of systemic racism in America. Learn about structural inequalities across America's criminal, urban, and economic institutions.
 
